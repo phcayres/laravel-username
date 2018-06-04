@@ -34,7 +34,15 @@ laravel new <nome_projeto>
 ```
 Salve a alteração e execute o comando ```php artisan migrate```.
 
-**4ª** - Edite o controller **RegisterController.php** e adicione a linha **'username' => 'required|string|max:255',** no método **protected function validator(array $data){ ... }** e a linha **'username' => $data['username'],** no método **protected function create(array $data){ ... }**.
+**4ª** - Edite o Model **User.php** e adicione o campo **username** em **protected $fillable[ ... ]** como segue:
+
+```
+    protected $fillable = [
+        'name', 'username', 'email', 'password',
+    ];
+```
+
+**5ª** - Edite o controller **RegisterController.php** e adicione a linha **'username' => 'required|string|max:255',** no método **protected function validator(array $data){ ... }** e a linha **'username' => $data['username'],** no método **protected function create(array $data){ ... }**.
 
 ```sh
  protected function validator(array $data)
@@ -63,7 +71,7 @@ e
         ]);
     }
 ```
-**5ª** - edite o arquivo **AuthenticatesUsers** que se encontra dentro do caminho **vendor\laravel\framework\src\Illuminate\Foundation\Auth**. Localize o método **public function username(){ ... }** e altere o seu retorno de **email** para **username**, como segue:
+**6ª** - edite o arquivo **AuthenticatesUsers** que se encontra dentro do caminho **vendor\laravel\framework\src\Illuminate\Foundation\Auth**. Localize o método **public function username(){ ... }** e altere o seu retorno de **email** para **username**, como segue:
 
 ```sh
     public function username()
@@ -73,4 +81,4 @@ e
     }
 ```
 
-**5ª** - agora vamos alterar as views de logon e registro de usuários para incluir o campo username.
+**7ª** - agora vamos alterar as views de logon e registro de usuários para incluir o campo username.

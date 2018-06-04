@@ -6,13 +6,13 @@ O Laravel disponibiliza, a partir da versão 5.2, um sistema de autenticação q
 
 ## Etapas
 
-- crie um novo projeto Laravel
+1º - crie um novo projeto Laravel
 ```sh
 laravel new <nome_projeto>
 ```
-- configure as informações de acesso ao banco de dados de sua aplicação no arquivo **.env**.
+2º - configure as informações de acesso ao banco de dados de sua aplicação no arquivo **.env**.
 
-- acesse o diretório do projeto e execute o comando ```sh php artisan make:auth ```. Este comando organiza de  maneira rápida todas as rotas e visualizações necessárias para autenticação dentro de seu projeto.
+3º - acesse o diretório do projeto e execute o comando ```sh php artisan make:auth ```. Este comando organiza de  maneira rápida todas as rotas e visualizações necessárias para autenticação dentro de seu projeto.
 
 - Localize o arquivo de migration da tabela de usuários e adicione o campo username como segue:
 ```sh
@@ -34,3 +34,4 @@ laravel new <nome_projeto>
 ```
 Salve a alteração e execute o comando ```php artisan migrate```.
 
+4º - Edite o controller **RegisterController.php** e adicione a linha **'username' => 'required|string|max:255',** no método **protected function validator(array $data){ ... }** e a linha **'username' => $data['username'],** no método **protected function create(array $data)**.

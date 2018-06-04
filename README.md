@@ -83,7 +83,7 @@ e
 
 Agora vamos alterar as views de logon e registro de usuários para incluir o campo username.
 
-**7ª** - Edite o arquivo **register.blade.php** disponível dentro de **\\resources\views\auth** e adicione o trecho de código abaixo.
+**7ª** - Edite o arquivo **register.blade.php** disponível dentro de **\\resources\views\auth** e adicione o trecho de código abaixo:
 
 ```sh
     <div class="form-group row">
@@ -101,3 +101,20 @@ Agora vamos alterar as views de logon e registro de usuários para incluir o cam
     </div>
 ```
 
+**8ª** - Edite o arquivo **login.blade.php** disponível dentro de **\\resources\views\auth**, remova a div correspondente ao **email** e adicione o trecho de código abaixo:
+
+```sh
+    <div class="form-group row">
+        <label for="username" class="col-sm-4 col-form-label text-md-right">{{ __('User') }}</label>
+
+        <div class="col-md-6">
+            <input id="username" type="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
+
+            @if ($errors->has('username'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('username') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
+```

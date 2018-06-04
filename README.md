@@ -12,7 +12,7 @@ laravel new <nome_projeto>
 ```
 **2ª** - configure as informações de acesso ao banco de dados de sua aplicação no arquivo **.env**.
 
-**3ª** - acesse o diretório do projeto e execute o comando ```sh php artisan make:auth ```. Este comando organiza de  maneira rápida todas as rotas e visualizações necessárias para autenticação dentro de seu projeto.
+**3ª** - acesse o diretório do projeto e execute o comando ```php artisan make:auth```. Este comando organiza de  maneira rápida todas as rotas e visualizações necessárias para autenticação dentro de seu projeto.
 
 - Localize o arquivo de migration da tabela de usuários e adicione o campo username como segue:
 ```sh

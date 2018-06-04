@@ -15,8 +15,8 @@ laravel new <nome_projeto>
 **3ª** - Acesse o diretório do projeto e execute o comando ```php artisan make:auth```. Este comando organiza de maneira rápida todas as rotas e visualizações necessárias para autenticação dentro de seu projeto.
 
 - Localize o arquivo de migration da tabela de usuários e adicione o campo username como segue:
-```sh
 
+```sh
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
@@ -88,7 +88,7 @@ Agora vamos alterar as views de logon e registro de usuários para incluir o cam
 <div class="form-group row">
     <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('User') }}</label>
 
-```sh
+```
     <div class="col-md-6">
         <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
 

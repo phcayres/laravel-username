@@ -19,22 +19,21 @@ Este comando organiza de  maneira rápida todas as rotas e visualizações neces
 
 - Localize o arquivo de migration da tabela de usuários e adicione o campo username como segue:
 ```sh
+
     public function up()
     {
-        $this->eachTable( function($table) {    
-            Schema::create($table, function (Blueprint $temp) {
-                $temp->increments('id');
-                $temp->string('name');
-                
-                $temp->string('username', 20);
-                
-                $temp->string('email', 150)->unique();
-                $temp->string('password');
-                $temp->rememberToken();
-                $temp->timestamps();
-            });
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            
+            $table->string('username', 20);
+            
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 ```
-Este comando organiza de  maneira rápida todas as rotas e visualizações necessárias para autenticação dentro de seu projeto.
+salve a alteração e execute o comando ```php artisan migrate```.
 

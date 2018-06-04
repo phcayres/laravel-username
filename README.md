@@ -23,7 +23,7 @@ laravel new <nome_projeto>
             $table->increments('id');
             $table->string('name');
             
-            $table->string('username', 20);
+            $table->string('username', 20)->unique();
             
             $table->string('email', 150)->unique();
             $table->string('password');

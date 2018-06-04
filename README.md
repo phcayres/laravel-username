@@ -10,12 +10,9 @@ O Laravel disponibiliza, a partir da versão 5.2, um sistema de autenticação q
 ```sh
 laravel new <nome_projeto>
 ```
+- configure as informações de acesso ao banco de dados de sua aplicação no arquivo **.env**.
 
-- acesse o diretório do projeto e execute o comando 
-```sh
-php artisan make:auth
-```
-Este comando organiza de  maneira rápida todas as rotas e visualizações necessárias para autenticação dentro de seu projeto.
+- acesse o diretório do projeto e execute o comando ```sh php artisan make:auth ```. Este comando organiza de  maneira rápida todas as rotas e visualizações necessárias para autenticação dentro de seu projeto.
 
 - Localize o arquivo de migration da tabela de usuários e adicione o campo username como segue:
 ```sh
@@ -35,5 +32,5 @@ Este comando organiza de  maneira rápida todas as rotas e visualizações neces
         });
     }
 ```
-salve a alteração e execute o comando ```php artisan migrate```.
+Salve a alteração e execute o comando ```php artisan migrate```.
 

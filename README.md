@@ -6,13 +6,13 @@ O Laravel disponibiliza, a partir da versão 5.2, um sistema de autenticação q
 
 ## Etapas
 
-**1º** - crie um novo projeto Laravel
+**1ª** - crie um novo projeto Laravel
 ```sh
 laravel new <nome_projeto>
 ```
-**2º** - configure as informações de acesso ao banco de dados de sua aplicação no arquivo **.env**.
+**2ª** - configure as informações de acesso ao banco de dados de sua aplicação no arquivo **.env**.
 
-**3º** - acesse o diretório do projeto e execute o comando ```sh php artisan make:auth ```. Este comando organiza de  maneira rápida todas as rotas e visualizações necessárias para autenticação dentro de seu projeto.
+**3ª** - acesse o diretório do projeto e execute o comando ```sh php artisan make:auth ```. Este comando organiza de  maneira rápida todas as rotas e visualizações necessárias para autenticação dentro de seu projeto.
 
 - Localize o arquivo de migration da tabela de usuários e adicione o campo username como segue:
 ```sh
@@ -34,7 +34,7 @@ laravel new <nome_projeto>
 ```
 Salve a alteração e execute o comando ```php artisan migrate```.
 
-**4º** - Edite o controller **RegisterController.php** e adicione a linha **'username' => 'required|string|max:255',** no método **protected function validator(array $data){ ... }** e a linha **'username' => $data['username'],** no método **protected function create(array $data){ ... }**.
+**4ª** - Edite o controller **RegisterController.php** e adicione a linha **'username' => 'required|string|max:255',** no método **protected function validator(array $data){ ... }** e a linha **'username' => $data['username'],** no método **protected function create(array $data){ ... }**.
 
 ```sh
  protected function validator(array $data)
@@ -62,6 +62,15 @@ e
             'password' => Hash::make($data['password']),
         ]);
     }
-
 ```
+**5ª** - edite o arquivo **AuthenticatesUsers** que se encontra dentro do caminho **vendor\laravel\framework\src\Illuminate\Foundation\Auth**. Localize o método **public function username(){ ... }** e altere o seu retorno de **email** para **username**, como segue:
+
+```sh
+    public function username()
+    {
+        //return 'email';
+        return 'username';
+    }
+```
+
 

@@ -83,7 +83,7 @@ e
 
 Agora vamos alterar as views de logon e registro de usuários para incluir o campo username.
 
-**7ª** - Edite o arquivo **register.blade.php** disponível dentro de **\resources\views\auth\** e adicione o trecho de código abaixo.
+**7ª** - Edite o arquivo **register.blade.php** disponível dentro de **\\resources\views\auth** e adicione o trecho de código abaixo.
 
 ```sh
     <div class="form-group row">

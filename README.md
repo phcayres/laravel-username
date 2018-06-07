@@ -1,5 +1,6 @@
 # laravel-username
-Alterar autenticação padrão do Laravel de e-mail para username.
+
+Setting up the username field to authenticate users on Laravel. By default Laravel uses user email when we use **php artisan make:auth** to do the authentication process
 
 ## Introdução
 O Laravel disponibiliza, a partir da versão 5.2, um sistema de autenticação que simplifica a implementação de controle de acesso. Neste artigo irei utiliza-lo e alterar o forma padrão de acesso trocando a autenticação padrão de e-mail para o campo username.

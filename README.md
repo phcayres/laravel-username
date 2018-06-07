@@ -43,7 +43,7 @@ Salve and run ```php artisan migrate``` command.
     ];
 ```
 
-**5ª** - Edit the Controller **RegisterController.php** file to add the instruction **'username' => 'required|string|max:255',** inside the method **protected function validator(array $data){ ... }** and the instruction **'username' => $data['username'],** insite the method **protected function create(array $data){ ... }**.
+**5ª** - Edit the Controller **RegisterController.php** file to add the instruction **'username' => 'required|string|max:255',** inside the method **protected function validator(array $data){ ... }** and the instruction **'username' => $data['username'],** inside the method **protected function create(array $data){ ... }** as shown below:
 
 ```sh
  protected function validator(array $data)
@@ -58,7 +58,7 @@ Salve and run ```php artisan migrate``` command.
         ]);
     }
 ```
-e 
+and 
 ```sh
     protected function create(array $data)
     {
@@ -72,7 +72,7 @@ e
         ]);
     }
 ```
-**6ª** - edite o arquivo **AuthenticatesUsers** que se encontra dentro do caminho **vendor\laravel\framework\src\Illuminate\Foundation\Auth**. Localize o método **public function username(){ ... }** e altere o seu retorno de **email** para **username**, como segue:
+**6ª** - Edit the file **AuthenticatesUsers** located in **vendor\laravel\framework\src\Illuminate\Foundation\Auth**. Search for **public function username(){ ... }** method and change the return field **email** for **username** as shown below:
 
 ```sh
     public function username()
@@ -82,9 +82,9 @@ e
     }
 ```
 
-Agora vamos alterar as views de logon e registro de usuários para incluir o campo username.
+Now, let's make changes into logon and register users views files including the **username** fieild as a requered.
 
-**7ª** - Edite o arquivo **register.blade.php** disponível dentro de **\\resources\views\auth** e adicione o trecho de código abaixo:
+**7ª** - Edit **register.blade.php** file located in **\\resources\views\auth** and insert the code as shown below:
 
 ```sh
     <div class="form-group row">
@@ -102,7 +102,7 @@ Agora vamos alterar as views de logon e registro de usuários para incluir o cam
     </div>
 ```
 
-**8ª** - Edite o arquivo **login.blade.php** disponível dentro de **\\resources\views\auth**, remova a div correspondente ao **email** e adicione o trecho de código abaixo:
+**8ª** - Edit the **login.blade.php** file located in **\\resources\views\auth** and delete the **\<div>...<\/div>** corresponding to the **email** field and insert the code as shown below:
 
 ```sh
     <div class="form-group row">

@@ -3,19 +3,19 @@
 Setting up the username field to authenticate users on Laravel. By default Laravel uses user email when we use **php artisan make:auth** to do the authentication process.
 
 ## Getting Started
-O Laravel disponibiliza, a partir da versão 5.2, um sistema de autenticação que simplifica a implementação de controle de acesso. Neste artigo irei utiliza-lo e alterar o forma padrão de acesso trocando a autenticação padrão de e-mail para o campo username.
+Laravel has an authentication system that simplifies the access control into our systems. This article presents the steps to change the default access field **email** to the **username** field.
 
-## Etapas
+## Eteps
 
-**1ª** - Crie um novo projeto Laravel
+**1ª** - Create a new Laravel project
 ```sh
 laravel new <nome_projeto>
 ```
-**2ª** - Configure as informações de acesso ao banco de dados de sua aplicação no arquivo **.env**.
+**2ª** - Set up the database acess information editting the **.env** file.
 
-**3ª** - Acesse o diretório do projeto e execute o comando ```php artisan make:auth```. Este comando organiza de maneira rápida todas as rotas e visualizações necessárias para autenticação dentro de seu projeto.
+**3ª** - Run the command ```php artisan make:auth``` inside de project root directory. This command should be used in fresh applications and will install a layout view, registration and login views, as well as routes for all authentication endpoints.
 
-- Localize o arquivo de migration da tabela de usuários e adicione o campo username como segue:
+-Locate and edit the user migration file and add the username field as shown below:
 
 ```sh
     public function up()
@@ -33,9 +33,9 @@ laravel new <nome_projeto>
         });
     }
 ```
-Salve a alteração e execute o comando ```php artisan migrate```.
+Salve and run ```php artisan migrate``` command.
 
-**4ª** - Edite o Model **User.php** e adicione o campo **username** em **protected $fillable[ ... ]** como segue:
+**4ª** - Edit de Model **User.php** file to add the **username** field inside **protected $fillable[ ... ]** definitions as shown below:
 
 ```
     protected $fillable = [
@@ -43,7 +43,7 @@ Salve a alteração e execute o comando ```php artisan migrate```.
     ];
 ```
 
-**5ª** - Edite o controller **RegisterController.php** e adicione a linha **'username' => 'required|string|max:255',** no método **protected function validator(array $data){ ... }** e a linha **'username' => $data['username'],** no método **protected function create(array $data){ ... }**.
+**5ª** - Edit the Controller **RegisterController.php** file to add the instruction **'username' => 'required|string|max:255',** inside the method **protected function validator(array $data){ ... }** and the instruction **'username' => $data['username'],** insite the method **protected function create(array $data){ ... }**.
 
 ```sh
  protected function validator(array $data)

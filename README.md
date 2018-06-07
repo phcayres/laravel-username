@@ -102,7 +102,7 @@ Now, let's make changes into logon and register users views files including the 
     </div>
 ```
 
-**8ª** - Edit the **login.blade.php** file located in **\\resources\views\auth** and delete the **\<div>...<\/div>** corresponding to the **email** field and insert the code as shown below:
+**8ª** - Edit the **login.blade.php** file located in **\\resources\views\auth**. Delete the **\<div>...<\/div>** corresponding to the **email** field and insert the code as shown below:
 
 ```sh
     <div class="form-group row">
@@ -120,6 +120,10 @@ Now, let's make changes into logon and register users views files including the 
     </div>
 ```
 
+That's it all we need to change.
+
+## Testing
+Open a web browser and type the URL to access your new Laravel app. Use the ** Register ** link to add a new user or the ** Logon ** link to authenticate an existing user to access the app main page.
 
 ## Issues
 Open an [Issue](https://github.com/phcayres/laravel-username/issues), or search for older on.

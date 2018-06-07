@@ -118,3 +118,14 @@ Agora vamos alterar as views de logon e registro de usuários para incluir o cam
         </div>
     </div>
 ```
+
+Estas são as alterações necessárias para o funcionamento do projeto.
+
+## Testando
+Abra um navegador internet e informe a URL de acesso ao seu novo projeto Laravel. Acesse o link **Register** para adicionar um novo usuário ou o link **Logon** para fazer a autenticação de um usuário existente e acesarr a página inicial de seu projeto.
+
+## Dúvidas?
+Abra uma nova [Dúvida](https://github.com/phcayres/laravel-username/issues), , ou pesquise por dúvidas antigas.
+
+## Licença
+MIT

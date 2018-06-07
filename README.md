@@ -120,7 +120,7 @@ Now, let's make changes into logon and register users views files including the 
     </div>
 ```
 
-That's it all we need to change.
+That's it all we need change.
 
 ## Testing
 Open a web browser and type the URL to access your new Laravel app. Use the ** Register ** link to add a new user or the ** Logon ** link to authenticate an existing user to access the app main page.

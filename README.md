@@ -119,3 +119,10 @@ Now, let's make changes into logon and register users views files including the 
         </div>
     </div>
 ```
+
+
+## Issues
+Open an [Issue](https://github.com/phcayres/laravel-username/issues), or search for older on.
+
+## Licence
+MIT

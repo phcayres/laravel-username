@@ -82,7 +82,7 @@ and
     }
 ```
 
-Now, let's make changes into logon and register users views files including the **username** fieild as a requered.
+Now, let's make changes into logon and register users views files including the **username** field as required.
 
 **7ª** - Edit **register.blade.php** file located in **\\resources\views\auth** and insert the code as shown below:
 
